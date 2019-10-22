@@ -7,8 +7,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	let mainSlider = new SiemaWithDots({
 	  selector: '.gallery-slider__slides',
-	  duration: 200,
-	  easing: 'ease-out',
+	  duration: 350,
+	  easing: 'cubic-bezier(0.39, 0.575, 0.565, 1)',
     dotsBefore: false,
 	  draggable: true,
 	  loop: true,
