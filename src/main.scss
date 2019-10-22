@@ -41,7 +41,50 @@ html {
  * Gallery slider
  */
 .gallery-slider {
-	figure {
+	position: relative;
+
+	&__image {
 		@include thumbnail--16-9();
+	  --x: 0;
+	  --y: 0;
+	  --d: 50;
+	  pointer-events: auto;
+	  user-select: auto;
+
+	  img {
+	  	transition: transform .2s ease-out;
+	  }
+	  
+	  @media (hover: hover) {
+	    &:hover img {
+	      transform: 
+	        scale(1.025)
+	        translate(
+	          calc(var(--x) / var(--d) * 1px),
+	          calc(var(--y) / var(--d) * 1px)
+	        );
+	    }    
+		}
+	}
+
+	.dots {
+		position: absolute;
+		top: 50%;
+		right: 3em;
+		transform: translateY(-50%);
+
+		.dots__item {
+			outline: none;
+			display: block;
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			appearance: none;
+			border: solid 1px white;
+			width: 3em;
+			height: 3em;
+			margin-bottom: .5em;
+			cursor: pointer;
+			background: transparent;
+		}
 	}
 }
